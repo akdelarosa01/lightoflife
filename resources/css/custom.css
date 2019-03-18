@@ -1,0 +1,195 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding-bottom: 6rem;
+	min-height: 100%;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	background-color: #94939361;
+	background-image: url('../images/noisy.png');
+}
+
+body, .form-control, .table, .btn {
+	font-size: 11px;
+}
+
+.navbar-brand {
+	font-size: 14px;
+}
+
+.header {
+	width: 100%;
+    background-color: #fff;
+    padding: 10px 0px;
+    background-image: linear-gradient(to right top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/bg-login.jpg');
+    background-size: cover;
+    background-position: center 76%;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+    border-bottom: 3px solid #c6b538;
+}
+.form-control {
+	height: calc(2rem + 2px);
+	border: 1px solid #6c757d;
+}
+
+.navbar {
+	padding: 0px;
+}
+
+#header-navbar {
+	/*background-image: url('../images/fabric-dark.png');*/
+	border-bottom: 3px solid #c6b538;
+}
+
+#nav-menu {
+	border-top: 3px solid #c6b538;
+}
+
+/*footer {
+	height: 40px;
+	border-top: 3px solid #c6b538;
+	color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+}*/
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/*padding: 1rem;*/
+	background-color: #efefef;
+	text-align: center;
+	height: 40px;
+	border-top: 3px solid #c6b538;
+	color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.bg-red {
+	color: #fff;
+	border-color: #9e181c !important;
+	background-color: #9e181c !important;
+}
+
+.custom-control-label {
+	padding-top: 3px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, 0.81);
+}
+
+.navbar .dropdown-toggle, .navbar .dropdown-menu a {
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.navbar .dropdown-item.active, .navbar .dropdown-item:active {
+    color: inherit;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+@media (min-width: 767px) {
+    .navbar .dropdown-toggle:not(.nav-link)::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .5em;
+        vertical-align: 0;
+        border-bottom: .3em solid transparent;
+        border-top: .3em solid transparent;
+        border-left: .3em solid;
+    }
+}
+
+.dropdown-menu > .dropdown-item > a {
+	text-decoration: none;
+	color: #000;
+}
+
+.input-group-sm>.custom-select, .input-group-sm>.form-control, .input-group-sm>.input-group-append>.btn, .input-group-sm>.input-group-append>.input-group-text, .input-group-sm>.input-group-prepend>.btn, .input-group-sm>.input-group-prepend>.input-group-text {
+	padding: 0.19rem .5rem;
+	font-size: 11px;
+}
+
+.input-group-prepend, .input-group-append {
+	border: 1px solid #6c757d;
+}
+
+table.dataTable {
+	border-collapse: collapse !important;
+}
+
+.table-bordered, .table-bordered td, .table-bordered th {
+	border: 1px solid #6c757d;
+}
+
+.table thead th {
+	border-bottom: 2px solid #6c757d;
+}
+
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+    padding-right: 3px;
+    white-space: nowrap;
+}
+
+.dataTables_length, .dataTables_filter {
+    margin-top: 5px;
+}
+
+.dataTables_wrapper {
+    padding-top: 5px;
+}
+
+.dataTables_scroll {
+    border-left: 1px solid #e9ecef;
+    border-right: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    border-collapse: collapse;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.loading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+                url('../images/loading.gif')
+                50% 50%
+                no-repeat;
+}
+.custom-file-label, .custom-file {
+    height: calc(1.8125rem + 2px);
+}
+
+div.dataTables_scrollBody table thead .sorting:before,
+div.dataTables_scrollBody table thead .sorting_asc:before,
+div.dataTables_scrollBody table thead .sorting_desc:before {
+    display: none;
+}

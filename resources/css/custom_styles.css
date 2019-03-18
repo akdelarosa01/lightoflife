@@ -1,0 +1,140 @@
+/*Custon Css*/
+body, .input-group-addon, .input-group-btn, table, .form-control, .btn {
+	font-size: 11px;
+}
+.input-group-sm>.custom-select, .input-group-sm>.form-control, .input-group-sm>.input-group-append>.btn, .input-group-sm>.input-group-append>.input-group-text, .input-group-sm>.input-group-prepend>.btn, .input-group-sm>.input-group-prepend>.input-group-text {
+    font-size: 11px;
+}
+label, .control-label {
+    font-size: 11px;
+}
+
+input {
+    font-size: 11px;
+}
+
+.box-header .box-title, .box-header>.fa, .box-header>.glyphicon, .box-header>.ion {
+    font-size: 15px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.logo-img {
+    width: 160px;
+}
+
+.navbar-nav>li>a {
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+@media (min-width: 480px)
+{
+    .modal-dialog
+    {
+        margin: 30px;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .modal-dialog
+    {
+        width: 600px;
+        margin: 30px auto;
+    }
+    .modal-sm
+    {
+        width: 300px;
+    }
+}
+
+@media (min-width: 992px)
+{
+    .modal-lg {
+        width: 900px;
+    }
+
+    .modal-full {
+        width: 1200px;
+    }
+}
+
+.table-checkbox {
+	margin-top: 5px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.logo-wrapper {
+    margin-top: 3px;
+    margin-left: 50px;
+    width: 85px;
+}
+
+.loading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+                url('../images/loading.gif')
+                50% 50%
+                no-repeat;
+}
+
+.table {
+    color: #333232;
+    font-weight: 400;
+}
+
+.user-panel {
+    position: relative;
+    width: 100%;
+    padding: 20px 0px 20px;
+}
+
+.skin-red .content {
+    background: #ecf0f5;
+}
+
+.main-footer {
+    background: #fff;
+    padding: 11.5px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+}
+
+.custom-control {
+    padding-left: 0px;
+}
+
+[type=checkbox]+label {
+    line-height: 21px;
+    padding-left: 25px;
+}
+
+@media (max-width: 767px)
+{
+    .main-sidebar {
+        padding-top: 45px;
+        -webkit-transform: translate(-230px, 0);
+        -ms-transform: translate(-230px, 0);
+        -o-transform: translate(-230px, 0);
+        transform: translate(-230px, 0);
+    }
+}
+
+.content-header>h1, .content-header>.container>h1 {
+    margin: 0 0 0px;
+    font-size: 18px;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
