@@ -121,28 +121,33 @@ $(function () {
     }).done(function (data, textStatus, xhr) {
       var qgr = data.qg_results;
       var qgi = data.qg_item;
-      $('#td_teacher').html(qgr.teacher);
-      $('#td_subject').html(qgr.subject);
-      $('#td_section').html(qgr.section);
-      $('#td_quiz_title').html(qgr.quiz_title);
-      $('#td_quiz_type').html(qgr.quiz_type);
-      $('#td_start_date').html(qgr.start_date);
-      $('#td_due_date').html(qgr.due_date);
-      $('#td_max_attempt').html(qgr.max_attempt);
-      $('#td_timer').html(qgr.timer);
-      $('#td_late_submission').html(qgr.late_submission);
-      $('#td_instruction').html(qgr.instruction);
 
-      if (qgi.length < 1) {
-        $('#tbl_details_body').html('<tr><td colspan="5">No student have taken this quiz</td></tr>');
+      if (qgr !== null && qgr !== null) {
+        $('#td_teacher').html(qgr.teacher);
+        $('#td_subject').html(qgr.subject);
+        $('#td_section').html(qgr.section);
+        $('#td_quiz_title').html(qgr.quiz_title);
+        $('#td_quiz_type').html(qgr.quiz_type);
+        $('#td_start_date').html(qgr.start_date);
+        $('#td_due_date').html(qgr.due_date);
+        $('#td_max_attempt').html(qgr.max_attempt);
+        $('#td_timer').html(qgr.timer);
+        $('#td_late_submission').html(qgr.late_submission);
+        $('#td_instruction').html(qgr.instruction);
+
+        if (qgi.length < 1) {
+          $('#tbl_details_body').html('<tr><td colspan="5">No student have taken this quiz</td></tr>');
+        } else {
+          $.each(qgi, function (i, x) {
+            items += '<tr>' + '<td>' + x.student + '</td>' + '<td>' + x.attempt_no + '</td>' + '<td>' + x.total_points + '/' + x.max_score + '</td>' + '<td>' + x.grade_percent + '</td>' + '<td>' + x.remarks + '</td>' + '</tr>';
+          });
+          $('#tbl_details_body').html(items);
+        }
+
+        $('#quiz_grade_modal').modal('show');
       } else {
-        $.each(qgi, function (i, x) {
-          items += '<tr>' + '<td>' + x.student + '</td>' + '<td>' + x.attempt_no + '</td>' + '<td>' + x.total_points + '/' + x.max_score + '</td>' + '<td>' + x.grade_percent + '</td>' + '<td>' + x.remarks + '</td>' + '</tr>';
-        });
-        $('#tbl_details_body').html(items);
+        msg("Quiz Details seems deleted.", "failed");
       }
-
-      $('#quiz_grade_modal').modal('show');
     }).fail(function (xhr, textStatus, errorThrown) {
       msg('Quiz Details: ' + errorThrown, 'error');
     }).always(function () {
@@ -150,7 +155,8 @@ $(function () {
     });
   });
   $('#btn_print').on('click', function () {
-    window.location.href = '../../activities/quiz-grade-print?quiz_id=' + $('#quiz_id').val() + '&&quiz_title=' + $('#quiz_title').val() + '&&quiz_type=' + $('#quiz_type').val() + '&&subject=' + $('#subject').val() + '&&section=' + $('#section').val() + '&&section_id=' + $('#section_id').val() + '&&subject_id=' + $('#subject_id').val();
+    var link = '../../activities/quiz-grade-print?quiz_id=' + $('#quiz_id').val() + '&&quiz_title=' + $('#quiz_title').val() + '&&quiz_type=' + $('#quiz_type').val() + '&&subject=' + $('#subject').val() + '&&section=' + $('#section').val() + '&&section_id=' + $('#section_id').val() + '&&subject_id=' + $('#subject_id').val();
+    window.open(link, '_blank');
   });
 });
 
